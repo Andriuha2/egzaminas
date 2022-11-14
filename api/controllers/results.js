@@ -25,7 +25,7 @@ module.exports.INSERT_RESULT = function (req, res) {
 
   result.save().then((result) => {
     return res.status(200).json({
-      statusMessage: "task was inserted successfully",
+      statusMessage: "result was inserted successfully",
       result: result,
     });
   });
@@ -61,8 +61,8 @@ module.exports.DELETE_RESULT = function (req, res) {
   ResultSchema.deleteOne({ _id: req.params.id }).then((results) => {
     console.log("results", results);
     res.status(200).json({
-      statusMessage: "Item was deleted sucessfuly",
-      deletedItem: results,
+      statusMessage: "result was deleted sucessfuly",
+      deletedResult: results,
     });
   });
 };

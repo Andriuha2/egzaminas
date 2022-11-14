@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const resultsRoutes = require("./api/routes/results");
+const scoreboardRoutes = require("./api/routes/scoreboard");
+
 const mongoose = require("mongoose");
 require("dotenv").config();
 
@@ -22,6 +24,7 @@ mongoose
   });
 
 app.use(resultsRoutes);
+app.use(scoreboardRoutes);
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
