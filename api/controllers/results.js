@@ -3,10 +3,11 @@ const ResultSchema = require("../models/resultModel");
 const results = [];
 
 module.exports.CREATE_RESULT = function (req, res) {
-  const result = new resultSchema({
+  const result = new ResultSchema({
     name: req.body.name,
     _id: req.body.scoreboard_id,
-    result: Number,
+    result: [],
+    ASC: req.body.scoreDirection,
   });
   result.save().then((result) => {
     return res

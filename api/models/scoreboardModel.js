@@ -4,7 +4,7 @@ const scoreboardSchema = mongoose.Schema({
   name: { type: String, required: true, min: 3 },
   dateCreated: { type: String },
   results_ids: { type: Array },
-  scoreDirection: { type: String, enum: ["ASC", "DESC"] },
+  scoreDirection: { type: String, Enumerator: ["ASC", "DESC"] },
 });
 
 module.exports = mongoose.model("Scoreboard", scoreboardSchema);
