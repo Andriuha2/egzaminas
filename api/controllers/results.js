@@ -1,3 +1,4 @@
+const ScoreboardSchema = require("../models/scoreboardModel");
 const ResultSchema = require("../models/resultModel");
 
 const results = [];
@@ -5,9 +6,8 @@ const results = [];
 module.exports.CREATE_RESULT = function (req, res) {
   const result = new ResultSchema({
     name: req.body.name,
-    _id: req.body.scoreboard_id,
-    result: [],
-    ASC: req.body.scoreDirection,
+    _id: req.body._id,
+    result: req.body.points,
   });
   result.save().then((result) => {
     return res
